@@ -1,0 +1,22 @@
+<div class="container">
+	<form class="form-horizontal"  id="PatientForm">
+       
+           
+<br>
+	<input type="search" ng-model="query" placeholder="Search Patient" class="form-control">
+	<br>
+	<table class="table table-striped" border="1"  cellpadding="5" cellspacing="2">
+	 	    <tr>
+	 		    <th>first name</th><th>last name</th><th>Age</th><th>Gender</th><th>phone</th><th>Dob</th><th>message</th><th>Added</th><th>Remove</th>
+	 	    </tr>
+
+            <tr>
+	 		    <td>first name</td><td>last name</td><td>Age</td><td>Gender</td><td>phone</td><td>Dob</td><td>message</td><td>Added</td><td>Remove</td>
+	 	    </tr>
+            
+	 	    <tr ng-repeat="patient in patients | filter: query">
+	 		    <td>{{ patient.fname }}</td><td>{{ patient.lname }}</td><td>{{ patient.age }}</td><td>{{ patient.gender }}</td><td>{{ patient.phone }}</td><td>{{ patient.dob }}</td><td>{{ patient.message }}</td><td>{{ patient.added_date }}</td><td><button class="btn btn-danger" ng-click="removeData(patient.id)">x</button></td>
+	 	    </tr>
+	</table>
+        </form> 
+    </div>
